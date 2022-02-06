@@ -43,7 +43,10 @@ class Main extends Component {
             <div>
                 <Jumbotron >
                     <div className="container">
+                        <div className="col col-12">
+                    <p className="cur">Welcome {this.props.user.name}!</p>
                         <Logout />
+                        </div>
                         <div className="row row-header">
                             <div className="col-12 col-md-6">
                                 <h1 className="cur">Today's News</h1>
