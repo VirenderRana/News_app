@@ -1,7 +1,5 @@
-.row-header{
-  margin:0px auto;
-  padding:0px auto;
-}
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
 
 .row-content {
   margin:0px auto;
@@ -19,11 +17,6 @@
   color: rgb(250, 250, 245);
 }
 
-.footer{
-  background-color: #D1C4E9;
-  margin:0px auto;
-  padding: 20px 0px 20px 0px;
-}
 .jumbotron {
   padding:70px 30px 70px 30px;
   margin:0px auto;
@@ -32,40 +25,6 @@
   background-image: url("./images/headerbg.png");
   background-size: cover;
   box-shadow: 0 8px 16px rgba(117, 111, 111, 0.795);
-}
-
-address{
-  font-size:80%;
-  margin:0px;
-  color:#0f0f0f;
-}
-
-.navbar-dark {
-  background-color: #512DA8;
-}
-
-.form-inline .form-control .form-group {flex-grow:1}
-
-.page-enter {
-  opacity: 0.01;
-  transform: translateX(-100%);
-}
-
-.page-enter-active {
-  opacity: 1;
-  transform: translateX(0%);
-  transition: all 300ms ease-in;
-}
-
-.page-exit {
-  opacity: 1;
-  transform: translateX(0%);
-}
-
-.page-exit-active {
-  opacity: 0.01;
-  transform: translateX(100%);
-  transition: all 300ms ease-out;
 }
 
 .card {
@@ -77,14 +36,6 @@ address{
   
 }
 
-.theme {
-  top: 200;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
 .card:hover {
   box-shadow: 0 3px 10px rgba(117, 111, 111, 0.795);
 }
@@ -93,12 +44,9 @@ a {
   color: black;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-
-
-body {
-		
-}
+a:hover {
+	text-decoration: none;
+  }
 
 .cont {
 	display: flex;
@@ -213,6 +161,10 @@ body {
 	border-bottom-color: #6A679E;
 }
 
+.login-frame{
+	margin-top: 180px;
+}
+
 .login__submit {
 	background: #fff;
 	font-size: 14px;
@@ -244,30 +196,4 @@ body {
 	color: #7875B5;
 }
 
-.social-login {	
-	position: absolute;
-	height: 140px;
-	width: 160px;
-	text-align: center;
-	bottom: 0px;
-	right: 0px;
-	color: #fff;
-}
-
-.social-icons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.social-login__icon {
-	padding: 20px 10px;
-	color: #fff;
-	text-decoration: none;	
-	text-shadow: 0px 0px 8px #7875B5;
-}
-
-.social-login__icon:hover {
-	transform: scale(1.5);	
-}
 

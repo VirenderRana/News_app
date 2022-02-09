@@ -1,19 +1,21 @@
-import React, {Component, useRef} from 'react';
-import Header from './HeaderComponent';
+import React, {Component} from 'react';
 import NewsCard from './NewsCardComponent';
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
-import { Navbar, Util, Nav, Jumbotron, Collapse, NavItem, Button, Modal, ModalHeader, ModalBody, Form, FormGroup, Label, Input, NavbarText } from 'reactstrap';
+import { Jumbotron, Button, Input } from 'reactstrap';
 import Logout from './Logout';
 
 
 class Main extends Component {
     constructor (props){
         super(props);
+        let newDate = new Date();
+        let date = newDate.getDate();
+        let month = newDate.getMonth() + 1;
+        let year = newDate.getFullYear();
         this.state = {
             articles: [],
             search1: "https://newsapi.org/v2/everything?q=",
             search2: "top-headlines",
-            search3: "&language=en&from=2022-02-06&sortBy=publishedAt&apiKey=dfc8edad93664c258537049fff1415c6"
+            search3: `&language=en&from=${year}-${month}-${date}&sortBy=publishedAt&apiKey=dfc8edad93664c258537049fff1415c6`
         };
         
     }
@@ -42,15 +44,15 @@ class Main extends Component {
         return(
             <div>
                 <Jumbotron >
+                <Logout />
                     <div className="container">
                         <div className="col col-12">
-                    <p className="cur">Welcome {this.props.user.name}!</p>
-                        <Logout />
+                            <p className="cur">Welcome {this.props.user.name}!</p>
                         </div>
                         <div className="row row-header">
                             <div className="col-12 col-md-6">
                                 <h1 className="cur">Today's News</h1>
-                                <p className="cur">Curated specially for you!</p>
+                                <p className="cur">from our best sources!</p>
                             </div>
                             <div className="col-12 col-md-6">
                             <Input type="text" id="search" name="search"
