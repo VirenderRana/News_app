@@ -22,22 +22,50 @@ class Main extends Component {
     
     componentDidMount(){
         fetch(this.state.search1+this.state.search2+this.state.search3)
+        .then(response => {
+            if (response.ok) {
+              return response;
+            } 
+            else {
+              var error = new Error('Error ' + response.status + ': ' + response.statusText);
+              error.response = response;
+              throw error;
+            }
+          },
+          error => {
+                throw error;
+          })
         .then(response => response.json())
         .then(myJSON => {
             this.setState({
                 articles: myJSON.articles});
         })
+        .catch(error =>  { console.log('Articles', error.message); alert('Failed to fetch articles from the server\nError: '+error.message); });
         
     }
 
     search() {
         var isbn = document.getElementById('search').value;
         fetch(this.state.search1+isbn+this.state.search3)
+        .then(response => {
+            if (response.ok) {
+              return response;
+            } 
+            else {
+              var error = new Error('Error ' + response.status + ': ' + response.statusText);
+              error.response = response;
+              throw error;
+            }
+          },
+          error => {
+                throw error;
+          })
         .then(response => response.json())
         .then(myJSON => {
             this.setState({
                 articles: myJSON.articles});
         })
+        .catch(error =>  { console.log('Articles', error.message); alert('Failed to fetch articles from the server\nError: '+error.message); });
     }
     
     render() {
